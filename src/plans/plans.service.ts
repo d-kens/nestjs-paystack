@@ -27,7 +27,7 @@ export class PlansService {
                 },
             });
 
-            return response;
+            return response.data;
         } catch (error) {
             throw new InternalServerErrorException(`Error fetching plans: ${error.message}`)
         }
@@ -42,7 +42,7 @@ export class PlansService {
                 },
             });
 
-            return response;
+            return response.data;
 
         } catch(error) {
             if (error.response?.status === 404) {
@@ -65,7 +65,7 @@ export class PlansService {
                 }
             );
     
-            return response;
+            return response.data;
 
         } catch (error) {
             throw new InternalServerErrorException(`Error creating plan: ${error.message}`)
@@ -85,7 +85,7 @@ export class PlansService {
                 }
             );
 
-            return response;
+            return response.data;
 
         } catch (error) {
             if (error.response?.status === 404) {

@@ -7,6 +7,7 @@ import { User } from './user/user.enetity';
 import { TransactionsModule } from './transactions/transactions.module';
 import { ConfigModule } from '@nestjs/config';
 import { PlansModule } from './plans/plans.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
 @Module({
   imports: [ConfigModule.forRoot({ isGlobal: true}), TypeOrmModule.forRoot({
@@ -18,7 +19,7 @@ import { PlansModule } from './plans/plans.module';
       database: 'paystack_nestjs',
       entities: [User],
       synchronize: true,
-  }), UserModule, TransactionsModule, PlansModule],
+  }), UserModule, TransactionsModule, PlansModule, SubscriptionsModule],
   controllers: [AppController],
   providers: [AppService],
 })
